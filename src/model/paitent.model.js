@@ -35,5 +35,17 @@ const paitentSchema = new mongoose.Schema({
         ref: "Hospital",
         required: true
     },
+    medicalRecord: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "MedicalRecord",
+        required: true
+    },
+    chechkedBy: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Doctor",
+        required: true
+    }],
 
 }, { timestamps: true });
+
+export const Paitent = mongoose.modell("Paitent", paitentSchema);
