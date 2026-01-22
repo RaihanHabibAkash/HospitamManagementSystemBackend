@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const paitentSchema = new mongoose.Schema({
+const patientSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
@@ -43,9 +43,8 @@ const paitentSchema = new mongoose.Schema({
     chechkedBy: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Doctor",
-        required: true
     }],
 
 }, { timestamps: true });
 
-export const Paitent = mongoose.modell("Paitent", paitentSchema);
+export const Patient = mongoose.modell("Patient", patientSchema);

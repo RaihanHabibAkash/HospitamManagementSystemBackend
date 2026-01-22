@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Types } from "mongoose";
 
 const doctorSchema = new mongoose.Schema({
     name: {
@@ -22,7 +22,6 @@ const doctorSchema = new mongoose.Schema({
     worksInHospitals: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Hospital",
-        required: true
     }],
     numbers: [{
         type: String,
@@ -32,6 +31,10 @@ const doctorSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+    paitents: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Patient",
+    }],
 
 }, { timestamps: true });
 
